@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300); /* ICONE DI NAVIGAZIONE PERSONALIZZATE */
+
+a.infopoint {
+    background: url(../images/skin/information.png) no-repeat;
+}
+
+a.editing {
+    background-image: url(../images/skin/database_table.png);
+}
+
+.nav a.create {
+    background-image: url(../images/skin/database_add.png);
+}
+
+.nav li.dropdown.open ul.dropdown-menu {
+    background-color: #286286;
+}
+
+table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+}
+
+th, td {
+    border: lightblue;
+    padding: 8px !important;
+}
+
+tr:nth-child(even) {
+    background-color: white !important
+}
+
+th {
+    background-color: #c7c7c7 !important;
+    color: #3c3c3c !important;
+}
+
+html {
+    background-color: #b7b7b7;
+    background-image: -moz-linear-gradient(center top, #aaa, #b7b7b7);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b7b7b7), color-stop(1, #ddd));
+    background-image: linear-gradient(top, #dddddd, #b7b7b7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#aaaaaa', EndColorStr='#dddddd');
+    background-repeat: no-repeat;
+    width: 50%;
+    margin: 0 auto;
+    height: 80%;
+    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+}
+
+.alert {
+    padding: 10px;
+    margin: 10px;
+    background-color: #f44336;
+    color: white;
+    font-size: medium;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: black;
+}
+
