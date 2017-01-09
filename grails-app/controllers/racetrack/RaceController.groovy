@@ -1,7 +1,8 @@
 package racetrack
 
-import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+
+import static org.springframework.http.HttpStatus.*
 
 @Transactional(readOnly = true)
 class RaceController {
@@ -10,7 +11,7 @@ class RaceController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 13, 100)
-        respond Race.list(params), model:[raceCount: Race.count()]
+        respond Race.list(params), model: [raceCount: Race.count()]
     }
 
     def show(Race race) {
@@ -31,11 +32,11 @@ class RaceController {
 
         if (race.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond race.errors, view:'create'
+            respond race.errors, view: 'create'
             return
         }
 
-        race.save flush:true
+        race.save flush: true
 
         request.withFormat {
             form multipartForm {
@@ -60,25 +61,25 @@ class RaceController {
 
         if (race.hasErrors()) {
             transactionStatus.setRollbackOnly()
-            respond race.errors, view:'edit'
+            respond race.errors, view: 'edit'
             return
         }
 
-        race.save flush:true
+        race.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'race.label', default: 'Race'), race.id])
                 redirect race
             }
-            '*'{ respond race, [status: OK] }
+            '*' { respond race, [status: OK] }
         }
     }
 
     def search = {
         if (request.method == 'POST') {
             render view: 'index', model: [raceList: Race.findAllByRaceNameLikeAndCityLike(
-                    '%' + params.raceName + '%','%' + params.city + '%')]
+                    '%' + params.raceName + '%', '%' + params.city + '%')]
 
         }
     }
@@ -92,14 +93,14 @@ class RaceController {
             return
         }
 
-        race.delete flush:true
+        race.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'race.label', default: 'Race'), race.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -109,7 +110,7 @@ class RaceController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'race.label', default: 'Race'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

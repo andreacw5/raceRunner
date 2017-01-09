@@ -11,6 +11,7 @@ class Race {
     String organizator
     int cost
     int distance
+    String distanceType
     int maxRunners
     String raceName
     String raceType
@@ -33,11 +34,12 @@ class Race {
         raceName nullable: true
         startDateName nullable: true
         sponsor nullable: true
+        distanceType inList: ['Km','m']
     }
 
     // PAGINA 77 CRUD
 
     String toString() {
-        return "${raceName}, ${startDateName}"
+        return "${raceName}, ${maxRunners}"
     }
 }

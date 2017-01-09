@@ -15,7 +15,6 @@
 
     <g:layoutHead/>
 </head>
-
 <body class="tablet">
 <div class="navbar navbar-default navbar-static-top" role="navigation">
     <div class="container">
@@ -42,5 +41,6 @@
 <g:layoutBody/>
 
 <asset:javascript src="application.js"/>
+<asset:deferredScripts/>
 </body>
 </html>

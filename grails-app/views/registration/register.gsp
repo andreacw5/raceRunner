@@ -3,27 +3,42 @@
     <meta http-equiv="Content-Type" content="text/html;
 charset=UTF-8"/>
     <meta name="layout" content="main"/>
-    <title>Iscrizione a ${race.raceName}</title>
+    <title>Iscrizione</title>
 </head>
 
 <body>
 <div class="nav" role="navigation">
     <ul>
-        <li><g:link onClick="history.back()"><i class="fa fa-long-arrow-left" style="padding-right: 5px" aria-hidden="true"></i><g:message code="backto"/></g:link></li>
-        <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock" style="padding-right: 5px" aria-hidden="true"></i><g:message code="login"/></g:link></li>    </ul>
+        <li><g:link onClick="history.back()"><i class="fa fa-long-arrow-left" style="padding-right: 5px"
+                                                aria-hidden="true"></i><g:message code="backto"/></g:link></li>
+        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px" aria-hidden="true"></i><g:message code="res.home.label"/></g:link></li>
+        <sec:ifNotLoggedIn>
+            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock" style="padding-right: 5px" aria-hidden="true"></i><g:message code="login"/></g:link></li>
+        </sec:ifNotLoggedIn>
+        <sec:ifLoggedIn>
+            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px" aria-hidden="true"></i><g:message code="sec.name.label"/> <sec:username/></g:link></li>
+        </sec:ifLoggedIn></ul>
 </div>
+
 <div class="body">
     <div>
-        <h1 style="font-size: xx-large; text-align: center">Ti stai iscrivendo alla corsa <f style="font-style: italic; color: #3380b1;">${race.raceName}</f></h1>
-        <h1 style="font-size: large; text-align: center">Si svolgerà a ${race.city} il <g:formatDate date="${race.startDateName}"
-                                                                                                     format="dd/MM/yyyy (EEEE)"/></h1>
+        <h1 style="font-size: xx-large; text-align: center">Ti stai iscrivendo alla corsa <f
+                style="font-style: italic; color: #3380b1;">${race.raceName}</f></h1>
+
+        <h1 style="font-size: large; text-align: center">Si svolgerà a ${race.city} il <g:formatDate
+                date="${race.startDateName}"
+                format="dd/MM/yyyy (EEEE)"/></h1>
 
         <div style="font-size: small; margin-left: 20px">
             <i class="fa fa-road" aria-hidden="true"></i>  Lunghezza percorso: ${race.distance} <br>
             <i class="fa fa-rss" aria-hidden="true"></i>  Tipologia di gara: ${race.raceType} <br>
-            <i class="fa fa-users" aria-hidden="true"></i> Numero di iscritti attuali: ${race.registrations?.size()} <br>
-            <i class="fa fa-user" aria-hidden="true"></i>  Posti rimanenti: ${race.maxRunners - race.registrations?.size()} <br>
-            <i class="fa fa-eur" aria-hidden="true"></i> Costo di iscrizione: <g:formatNumber number="${race.cost}" type="currency" currencyCode="EUR"/><br>
+            <i class="fa fa-users"
+               aria-hidden="true"></i> Numero di iscritti attuali: ${race.registrations?.size()} <br>
+            <i class="fa fa-user"
+               aria-hidden="true"></i>  Posti rimanenti: ${race.maxRunners - race.registrations?.size()} <br>
+            <i class="fa fa-eur" aria-hidden="true"></i> Costo di iscrizione: <g:formatNumber number="${race.cost}"
+                                                                                              type="currency"
+                                                                                              currencyCode="EUR"/><br>
         </div>
 
     </div>
@@ -96,8 +111,8 @@ ${hasErrors(bean: registration, field: 'gender', 'errors')}'>
                         class='value
 ${hasErrors(bean: registration, field: 'postalAddress', 'errors')}'>
                         <input name='postalAddress'>
-                            ${registration?.postalAddress}
-                        </input>
+                        ${registration?.postalAddress}
+                    </input>
                     </td>
                 </tr>
                 <tr class='prop'>

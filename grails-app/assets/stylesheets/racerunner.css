@@ -75,3 +75,19 @@ html {
     color: black;
 }
 
+.seetab {
+    padding-bottom: 5px;
+    font-size: 100%;
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+a.seetext {
+    color: black !important;
+    text-decoration: none;
+}
+
+a.seetext1 {
+    color: black !important;
+    font-size: medium;
+}
