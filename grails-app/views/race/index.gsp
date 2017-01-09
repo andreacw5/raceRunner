@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
 <div class="nav" role="navigation">
     <ul>
         <li><g:link controller="race" action="index"><i class="fa fa-home" style="padding-right: 5px"
@@ -20,6 +21,9 @@
                                                                      aria-hidden="true"></i><g:message
                     code="force.run.add.label"/></g:link></li>
         </sec:ifLoggedIn>
+        <li><g:link controller="sponsor" action="index"><i class="fa fa-adn" style="padding-right: 5px"
+                                                           aria-hidden="true"></i><g:message
+                code="new.run.adn.label"/></g:link></li>
         <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px"
                                                          aria-hidden="true"></i><g:message
                 code="res.home.label"/></g:link></li>
@@ -40,7 +44,7 @@
 <g:if test="${raceCount < 1}">
     <div style="text-align: center; margin: 10%">
         <i class="fa grails-icon">
-        <asset:image src="runner-icon1.png"/>
+            <asset:image src="runner-icon1.png"/>
         </i>
         <sec:ifLoggedIn>
             <h2><g:message code="adm.screen.label"/></h2>

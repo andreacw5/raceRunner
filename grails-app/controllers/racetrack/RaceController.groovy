@@ -18,6 +18,10 @@ class RaceController {
         respond race
     }
 
+    def statistic(){
+
+    }
+
     def create() {
         respond new Race(params)
     }

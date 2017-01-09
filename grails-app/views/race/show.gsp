@@ -6,8 +6,10 @@
     <title><g:message code="default.show.label" args="[entityName]"/></title>
 </head>
 <style>
+body {
+    height: 95% !important;
+}
 </style>
-
 <body>
 <a href="#show-race" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
                                                            default="Skip to content&hellip;"/></a>
@@ -17,15 +19,26 @@
         <li><g:link onClick="history.back()"><i class="fa fa-long-arrow-left" style="padding-right: 5px"
                                                 aria-hidden="true"></i><g:message code="backto"/></g:link></li>
         <sec:ifLoggedIn>
-            <li><g:link controller="race" action="create"><i class="fa fa-send" style="padding-right: 5px" aria-hidden="true"></i><g:message code="new.run.add.label"/></g:link></li>
-            <li><g:link controller="registration" action="create"><i class="fa fa-send-o" style="padding-right: 5px" aria-hidden="true"></i><g:message code="force.run.add.label"/></g:link></li>
+            <li><g:link controller="race" action="create"><i class="fa fa-send" style="padding-right: 5px"
+                                                             aria-hidden="true"></i><g:message
+                    code="new.run.add.label"/></g:link></li>
+            <li><g:link controller="registration" action="create"><i class="fa fa-send-o" style="padding-right: 5px"
+                                                                     aria-hidden="true"></i><g:message
+                    code="force.run.add.label"/></g:link></li>
         </sec:ifLoggedIn>
-        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px" aria-hidden="true"></i><g:message code="res.home.label"/></g:link></li>
+        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px"
+                                                         aria-hidden="true"></i><g:message
+                code="res.home.label"/></g:link></li>
         <sec:ifNotLoggedIn>
-            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock" style="padding-right: 5px" aria-hidden="true"></i><g:message code="login"/></g:link></li>
+            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock"
+                                                                               style="padding-right: 5px"
+                                                                               aria-hidden="true"></i><g:message
+                    code="login"/></g:link></li>
         </sec:ifNotLoggedIn>
         <sec:ifLoggedIn>
-            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px" aria-hidden="true"></i><g:message code="sec.name.label"/> <sec:username/></g:link></li>
+            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px"
+                                              aria-hidden="true"></i><g:message
+                    code="sec.name.label"/> <sec:username/></g:link></li>
         </sec:ifLoggedIn></ul>
 </div>
 <g:if test="${flash.message}">
@@ -47,8 +60,10 @@
             <i class="fa fa-users"
                aria-hidden="true"></i> Numero di iscritti attuali: ${race.registrations?.size()} <br>
             <i class="fa fa-users" aria-hidden="true"></i> Corridori massimi: ${race.maxRunners} <br>
+
             <i class="fa fa-user"
                aria-hidden="true"></i>  Posti rimanenti: ${race.maxRunners - race.registrations?.size()} <br>
+
         </div>
 
         <div style="margin-inside: 3px; padding-top: 5px">

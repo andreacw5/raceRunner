@@ -26,6 +26,13 @@ body {
     -moz-box-shadow: 0 0 0.3em #286286;
     -webkit-box-shadow: 0 0 0.3em #286286;
     box-shadow: 0 0 0.3em #286286;
+    width: 50%;
+    margin: 0 auto;
+    height: 80%;
+    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
 }
 
@@ -142,8 +149,7 @@ img {
 }
 
 .nav a.home, .nav a.list, .nav a.create {
-    background-position: 0.7em center;
-    background-repeat: no-repeat;
+    background: no-repeat 0.7em center;
     text-indent: 25px;
 }
 
@@ -363,6 +369,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 1em;
+
 }
 
 tr {
@@ -559,7 +566,7 @@ a.skip {
     text-align:center;
 }
 
-img.grails-logo {
-    height:340px;
+img.runner-logo {
+    height:256px;
     margin-top:-10px;
 }

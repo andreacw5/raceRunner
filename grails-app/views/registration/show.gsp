@@ -6,7 +6,7 @@
     <title><g:message code="default.show.label" args="[entityName]"/></title>
 </head>
 <style>
-html {
+body {
     height: 95% !important;
 }
 </style>
@@ -35,10 +35,10 @@ html {
     </g:if>
     <f:display bean="registration"/>
     <g:form resource="${this.registration}" method="DELETE">
-        <fieldset class="buttons">
-            <g:link class="edit" action="edit" resource="${this.registration}"><g:message
+        <fieldset class="buttons pull-right">
+            <g:link action="edit" resource="${this.registration}"><g:message
                     code="default.button.edit.label" default="Edit"/></g:link>
-            <input class="delete" type="submit"
+            <input type="submit"
                    value="${message(code: 'default.button.delete.label', default: 'Delete')}"
                    onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');"/>
         </fieldset>

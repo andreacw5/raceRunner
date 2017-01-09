@@ -15,15 +15,26 @@
         <li><g:link onClick="history.back()"><i class="fa fa-long-arrow-left" style="padding-right: 5px"
                                                 aria-hidden="true"></i><g:message code="backto"/></g:link></li>
         <sec:ifLoggedIn>
-            <li><g:link controller="race" action="create"><i class="fa fa-send" style="padding-right: 5px" aria-hidden="true"></i><g:message code="new.run.add.label"/></g:link></li>
-            <li><g:link controller="registration" action="create"><i class="fa fa-send-o" style="padding-right: 5px" aria-hidden="true"></i><g:message code="force.run.add.label"/></g:link></li>
+            <li><g:link controller="race" action="create"><i class="fa fa-send" style="padding-right: 5px"
+                                                             aria-hidden="true"></i><g:message
+                    code="new.run.add.label"/></g:link></li>
+            <li><g:link controller="registration" action="create"><i class="fa fa-send-o" style="padding-right: 5px"
+                                                                     aria-hidden="true"></i><g:message
+                    code="force.run.add.label"/></g:link></li>
         </sec:ifLoggedIn>
-        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px" aria-hidden="true"></i><g:message code="res.home.label"/></g:link></li>
+        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px"
+                                                         aria-hidden="true"></i><g:message
+                code="res.home.label"/></g:link></li>
         <sec:ifNotLoggedIn>
-            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock" style="padding-right: 5px" aria-hidden="true"></i><g:message code="login"/></g:link></li>
+            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock"
+                                                                               style="padding-right: 5px"
+                                                                               aria-hidden="true"></i><g:message
+                    code="login"/></g:link></li>
         </sec:ifNotLoggedIn>
         <sec:ifLoggedIn>
-            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px" aria-hidden="true"></i><g:message code="sec.name.label"/> <sec:username/></g:link></li>
+            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px"
+                                              aria-hidden="true"></i><g:message
+                    code="sec.name.label"/> <sec:username/></g:link></li>
         </sec:ifLoggedIn></ul>
 </div>
 
@@ -44,7 +55,7 @@
         <fieldset class="form">
             <f:all bean="registration"/>
         </fieldset>
-        <fieldset class="buttons">
+        <fieldset class="buttons pull-right">
             <g:submitButton name="create" class="save"
                             value="${message(code: 'default.button.create.label', default: 'Create')}"/>
         </fieldset>

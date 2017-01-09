@@ -26,6 +26,10 @@ th, td {
     padding: 8px !important;
 }
 
+.zc-ref {
+    display: none;
+}
+
 tr:nth-child(even) {
     background-color: white !important
 }
@@ -42,14 +46,6 @@ html {
     background-image: linear-gradient(top, #dddddd, #b7b7b7);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#aaaaaa', EndColorStr='#dddddd');
     background-repeat: no-repeat;
-    width: 50%;
-    margin: 0 auto;
-    height: 80%;
-    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-
 }
 
 .alert {
