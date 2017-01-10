@@ -9,21 +9,21 @@
 <body>
 <div class="nav" role="navigation">
     <ul>
-        <li title="Torna alla pagina precedente" class="animated zoomIn"><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
+        <li title="Torna alla pagina precedente" ><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
                                                 aria-hidden="true"></i></g:link></li>
-        <li title="Vai alla pagina principale" class="animated zoomIn"><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
+        <li title="Vai alla pagina principale" ><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
                                                                                            aria-hidden="true"></i></g:link></li>
-        <li title="Ricerca una gara" class="animated zoomIn"><g:link controller="race" action="search"><i class="fa fa-search fa-2x"
+        <li title="Ricerca una gara"><g:link controller="race" action="search"><i class="fa fa-search fa-2x"
                                                                                   aria-hidden="true"></i></g:link></li>
 
         <sec:ifLoggedIn>
             <g:if test="${sponsorCount > 0}">
-                <li title="Aggiungi uno sponsor" class="pull-right animated zoomIn"><g:link controller="sponsor" action="create"><i class="fa fa-plus-circle fa-2x"
+                <li title="Aggiungi uno sponsor" class="pull-right"><g:link controller="sponsor" action="create"><i class="fa fa-plus-circle fa-2x"
                                                                                                                     aria-hidden="true"></i></g:link></li>
             </g:if>
         </sec:ifLoggedIn>
         <sec:ifNotLoggedIn>
-            <li class="pull-right animated zoomIn" title="Effettua l'accesso per le funzioni aggiuntive!"><g:link controller="login" action="auth"><i class="fa fa-sign-in fa-2x"  aria-hidden="true"></i></g:link></li>
+            <li class="pull-right" title="Effettua l'accesso per le funzioni aggiuntive!"><g:link controller="login" action="auth"><i class="fa fa-sign-in fa-2x"  aria-hidden="true"></i></g:link></li>
         </sec:ifNotLoggedIn>
 
     </ul>

@@ -10,28 +10,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <asset:stylesheet src="application.css"/>
-    <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="/../font-awesome-4.7.0/css/font-awesome.css"/>
 
     <g:layoutHead/>
 </head>
 
-<body class="tablet">
+<body>
 
 <div class="navbar navbar-default navbar-static-top " role="navigation">
     <sec:ifLoggedIn>
-        <a class="pull-right arealogin" href="/race/index">
+            <a class="pull-right arealogin" type="submit" data-toggle="modal" data-target="#exitModal" tabindex="-1" aria-hidden="true">
 
-            <i class="fa fa-male green" title="<g:message
-                    code="sec.name.label"/> <sec:username/>" style="padding-right: 5px; text-align: center"
-               aria-hidden="true"></i><g:message
-                code="sec.name.label"/> <sec:username/>!
+                <i class="fa fa-user-circle fa-3x"
+                   title="Utente attualmente connesso come <sec:username/>! Clicca qui per scollegarti!" style="text-align: center; color: #32b62e"
+                   aria-hidden="true"></i>
 
-        </a>
+            </a>
     </sec:ifLoggedIn>
     <div class="container">
         <div class="navbar-header">
-
             <a class="navbar-brand" href="/race/index" style="font-size: large">
                 <i class="fa grails-icon">
                     <asset:image src="runner-icon.png"/>

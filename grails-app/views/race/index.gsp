@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
 <div class="nav" role="navigation">
     <ul>
         <li title="Vai alla pagina principale"><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
@@ -31,7 +30,7 @@
     </ul>
 </div>
 <g:if test="${raceCount < 1}">
-    <div style="text-align: center; margin: 10%">
+    <div style="text-align: center; margin: 10%" class="animated flipInX">
         <i class="fa grails-icon">
             <asset:image src="runner-icon1.png"/>
         </i>
@@ -105,5 +104,6 @@
         </g:if>
     </div>
 </g:if>
+
 </body>
 </html>

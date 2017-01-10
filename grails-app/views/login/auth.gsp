@@ -15,8 +15,12 @@
 <body class="tablet">
 <div class="nav" role="navigation">
     <ul>
-        <li><a href="${createLink(uri: '/')}"><i class="fa fa-home" style="padding-right: 5px" aria-hidden="true"></i><g:message code="default.home.label"/></a></li>
-        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px" aria-hidden="true"></i><g:message code="res.home.label"/></g:link></li>
+        <li id="nav-1" title="Torna alla pagina precedente" class="animated zoomIn"><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
+                                                                                                             aria-hidden="true"></i></g:link></li>
+        <li id="nav-2" title="Vai alla pagina principale" class="animated zoomIn"><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
+                                                                                                                   aria-hidden="true"></i></g:link></li>
+        <li id="nav-3" title="Ricerca una gara" class="animated zoomIn"><g:link controller="race" action="search"><i class="fa fa-search fa-2x"
+                                                                                                          aria-hidden="true"></i></g:link></li>
     </ul>
 </div>
 
@@ -28,7 +32,7 @@
 </g:if>
 
 <div class="login-page">
-    <div class="form">
+    <div class="form ">
         <form class="login-form" action="/login/authenticate" method="POST" id="loginForm" autocomplete="off">
             <input type="text" class="text_" name="username" id="username" placeholder="Nome utente"/>
             <input type="password" class="text_" name="password" id="password" placeholder="password"/>
