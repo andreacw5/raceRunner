@@ -11,17 +11,28 @@
 
     <asset:stylesheet src="application.css"/>
     <asset:stylesheet src="application.css"/>
-    <asset:stylesheet src="/../font-awesome-4.7.0/css/font-awesome.min.css"/>
+    <asset:stylesheet src="/../font-awesome-4.7.0/css/font-awesome.css"/>
 
     <g:layoutHead/>
 </head>
+
 <body class="tablet">
 
-<div class="navbar navbar-default navbar-static-top" role="navigation">
+<div class="navbar navbar-default navbar-static-top " role="navigation">
+    <sec:ifLoggedIn>
+        <a class="pull-right arealogin" href="/race/index">
+
+            <i class="fa fa-male green" title="<g:message
+                    code="sec.name.label"/> <sec:username/>" style="padding-right: 5px; text-align: center"
+               aria-hidden="true"></i><g:message
+                code="sec.name.label"/> <sec:username/>!
+
+        </a>
+    </sec:ifLoggedIn>
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand" href="/race/index">
+            <a class="navbar-brand" href="/race/index" style="font-size: large">
                 <i class="fa grails-icon">
                     <asset:image src="runner-icon.png"/>
                 </i> Race Runner

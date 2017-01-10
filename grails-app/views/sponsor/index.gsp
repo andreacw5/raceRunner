@@ -7,46 +7,50 @@
 </head>
 
 <body>
-<a href="#list-sponsor" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                              default="Skip to content&hellip;"/></a>
-
 <div class="nav" role="navigation">
     <ul>
-        <li><g:link controller="race" action="index"><i class="fa fa-home" style="padding-right: 5px"
-                                                        aria-hidden="true"></i><g:message
-                code="default.home.label"/></g:link></li>
+        <li title="Torna alla pagina precedente" class="animated zoomIn"><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
+                                                aria-hidden="true"></i></g:link></li>
+        <li title="Vai alla pagina principale" class="animated zoomIn"><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
+                                                                                           aria-hidden="true"></i></g:link></li>
+        <li title="Ricerca una gara" class="animated zoomIn"><g:link controller="race" action="search"><i class="fa fa-search fa-2x"
+                                                                                  aria-hidden="true"></i></g:link></li>
+
         <sec:ifLoggedIn>
-            <li><g:link controller="sponsor" action="create"><i class="fa fa-plus" style="padding-right: 5px"
-                                                                aria-hidden="true"></i><g:message
-                    code="new.sponsor.add.label"/></g:link></li>
+            <g:if test="${sponsorCount > 0}">
+                <li title="Aggiungi uno sponsor" class="pull-right animated zoomIn"><g:link controller="sponsor" action="create"><i class="fa fa-plus-circle fa-2x"
+                                                                                                                    aria-hidden="true"></i></g:link></li>
+            </g:if>
         </sec:ifLoggedIn>
-        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px"
-                                                         aria-hidden="true"></i><g:message
-                code="res.home.label"/></g:link></li>
         <sec:ifNotLoggedIn>
-            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock"
-                                                                               style="padding-right: 5px"
-                                                                               aria-hidden="true"></i><g:message
-                    code="login"/></g:link></li>
+            <li class="pull-right animated zoomIn" title="Effettua l'accesso per le funzioni aggiuntive!"><g:link controller="login" action="auth"><i class="fa fa-sign-in fa-2x"  aria-hidden="true"></i></g:link></li>
         </sec:ifNotLoggedIn>
-        <sec:ifLoggedIn>
-            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px"
-                                              aria-hidden="true"></i><g:message
-                    code="sec.name.label"/> <sec:username/></g:link></li>
-        </sec:ifLoggedIn>
 
     </ul>
 </div>
 <g:if test="${sponsorCount < 1}">
-    <div style="text-align: center; margin: 10%">
-        <i class="fa grails-icon">
-            <asset:image src="runner-icon1.png"/>
-        </i>
+    <div style="text-align: center; margin: 10%" class="animated flipInX">
+        <sec:ifLoggedIn>
+            <i class="fa grails-icon">
+                <asset:image src="runner-icon1.png"/>
+            </i>
 
-        <h2><g:message code="sponsor.screen.label"/></h2>
-        <small><g:message code="sponsor.small.label"/></small>
+            <h2><g:message code="sponsor.screen.label"/><br></h2>
+            <g:link controller="sponsor" action="create">
+                <i class="fa fa-send" style="padding-right: 5px"
+                   aria-hidden="true"></i><g:message
+                    code="new.sponsor.pp.label"/>
+            </g:link>
+        </sec:ifLoggedIn>
+        <sec:ifNotLoggedIn class="animated flipInX">
+            <i class="fa grails-icon">
+                <asset:image src="runner-icon1.png"/>
+            </i>
+
+            <h2><g:message code="sponsor.screen.label"/></h2>
+            <small><g:message code="sponsor.small.label"/></small>
+        </sec:ifNotLoggedIn>
     </div>
-
 </g:if>
 <g:if test="${sponsorCount > 0}">
     <div id="list-sponsor" class="content scaffold-list" role="main">

@@ -29,7 +29,7 @@ pre {
 /* customizing bootstrap nav bar */
 .navbar {
     margin-bottom: 0px;
-    background: url(../images/Running-Desktop-Background.jpg);
+    background: #286286 !important;
     padding-right: 110px;
 }
 .navbar .container {
@@ -45,9 +45,9 @@ pre {
 
 }
 .navbar-default, .navbar-static-top {
-    background-color: #286286;
     border: 0px;
     padding-bottom: 10px;
+    background-color: #2b542c;
 }
 a.navbar-brand {
     color: white !important;

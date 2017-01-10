@@ -7,11 +7,11 @@
 </head>
 
 <body>
-<asset:stylesheet>
+<style>
 body {
     height: 95% !important;
 }
-</asset:stylesheet>
+</style>
 <a href="#create-race" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
                                                              default="Skip to content&hellip;"/></a>
 
@@ -58,40 +58,52 @@ body {
         </ul>
     </g:hasErrors>
     <g:form action="save">
-               <fieldset class="form seetab">
+        <fieldset class="form seetab">
             <fieldset class="form">
-                <h4 style="border-bottom: solid #B7B7B7"><g:message code="title.info.label"/></h4>
 
-                <div class="seetab"><a class="seetext"><g:message code="race.name.label"/> <f:widget bean="race"
-                                                                                                     property="raceName"/>
+                <h4 style="border-bottom: solid #B7B7B7; margin: 6px;"><g:message code="title.info.label"/></h4>
+
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.name.label"/>
+                    <f:widget bean="race" property="raceName"/>
                 </div>
 
-                <div class="seetab"><a class="seetext"><g:message code="race.type.label"/> <f:widget bean="race"
-                                                                                                     property="raceType"/>
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.type.label"/>
+                    <f:widget bean="race" property="raceType"/>
                 </div>
 
-                <div class="seetab"><a class="seetext"><g:message code="race.cost.label"/> <f:widget bean="race"
-                                                                                                     property="cost"/> €
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.cost.label"/>
+                    <f:widget bean="race" property="cost"/> €
                 </div>
 
-                <div class="seetab"><a class="seetext"><g:message code="race.distance.label"/> <f:widget bean="race"
-                                                                                                         property="distance"/> <f:widget
-                        bean="race" property="distanceType" value="Km"/></div>
-
-                <div class="seetab"><a class="seetext"><g:message code="race.maxRunner.label"/> <f:widget bean="race"
-                                                                                                          property="maxRunners"/>
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.distance.label"/>
+                    <f:widget bean="race" property="distance"/>
+                    <f:widget bean="race" property="distanceType" value="Km"/>
                 </div>
 
-                <div class="seetab"><a class="seetext"><g:message code="race.date.label"/> <f:widget bean="race"
-                                                                                                     property="startDateName"
-                                                                                                     value='${new Date()}'/></a>
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.maxRunner.label"/>
+                    <f:widget bean="race" property="maxRunners"/>
                 </div>
 
-                <div class="seetab"><a class="seetext"><g:message code="race.times.label"/> <f:widget bean="race"
-                                                                                                      property="times"
-                                                                                                      value="20:00"/></a>
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.date.label"/>
+                    <f:widget bean="race"
+                              property="startDateName"
+                              value='${new Date()}'/></a>
                 </div>
-                <h4 style="border-bottom: solid #B7B7B7"><g:message code="title.place.label"/></h4>
+
+                <div class="seetab"><a class="seetext">
+                    <g:message code="race.times.label"/>
+                    <f:widget bean="race"
+                              property="times"
+                              value="20:00"/></a>
+                </div>
+
+                <h4 style="border-bottom: solid #B7B7B7; margin: 6px;"><g:message code="title.place.label"/></h4>
 
                 <div class="seetab"><a class="seetext"><g:message code="race.city.label"/> <f:widget bean="race"
                                                                                                      property="city"/></a>
@@ -108,7 +120,7 @@ body {
                 <div class="seetab"><a class="seetext"><g:message code="race.postCode.label"/> <f:widget bean="race"
                                                                                                          property="postalCode"/></a>
                 </div>
-                <h4 style="border-bottom: solid #B7B7B7"><g:message code="title.additional.label"/></h4>
+                <h4 style="border-bottom: solid #B7B7B7; margin: 6px;"><g:message code="title.additional.label"/></h4>
 
                 <div class="seetab"><a class="seetext"><g:message code="race.organizator.label"/> <f:widget bean="race"
                                                                                                             property="organizator"/></a>
@@ -117,14 +129,12 @@ body {
                 <div class="seetab"><a class="seetext"><g:message code="race.sponsor.label"/> <f:widget bean="race"
                                                                                                         property="sponsor"/></a>
                 </div>
-
             </fieldset>
         </fieldset>
         <fieldset class="buttons pull-right">
             <g:submitButton name="create" class="save"
                             value="${message(code: 'default.button.create.label', default: 'Create')}"/>
         </fieldset>
-
     </g:form>
 </div>
 </body>

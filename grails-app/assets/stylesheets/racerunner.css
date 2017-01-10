@@ -77,6 +77,9 @@ html {
     padding-top: 5px;
     padding-left: 10px;
 }
+.seetextfield{
+    padding: 20%;
+}
 
 a.seetext {
     color: black !important;
@@ -86,4 +89,17 @@ a.seetext {
 a.seetext1 {
     color: black !important;
     font-size: medium;
+}
+
+.arealogin{
+padding: 1%;
+    top:0;
+    margin: 0 15px 0 1px;
+    border-right: 2px outset #c7c7c7;
+    border-bottom: 2px outset #c7c7c7;
+    border-left: 2px outset #c7c7c7;
+    width:auto!important;
+    max-width:1400px!important;
+    background: rgb(49, 49, 49);
+
 }

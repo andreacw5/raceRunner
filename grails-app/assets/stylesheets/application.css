@@ -11,6 +11,7 @@
 *= require grails
 *= require main
 *= require racerunner
+*= require animate
 *= require mobile
 *= require_self
 */
