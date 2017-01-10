@@ -69,6 +69,10 @@
                 <th><g:message code="city.racecol.label"/></th>
                 <th><g:message code="runner.racecol.label"/></th>
                 <th></th>
+    <sec:ifLoggedIn>
+                <th></th>
+    </sec:ifLoggedIn>
+                <th></th>
             </tr>
             <g:each in="${raceList}">
                 <tr>
@@ -78,21 +82,30 @@
                     <td><g:formatNumber number="${it.cost}" type="currency" currencyCode="EUR"/></td>
                     <td>${it.distance} ${it.distanceType}</td>
                     <td>${it.city}</td>
+                    <g:if test="${ it.registrations?.size() < it.maxRunners}">
+                        <td>
+                                <strong>${it.registrations?.size()}/${it.maxRunners}</strong>
+                        </td>
+                        <td>
+                            <g:link controller="registration" action="register" id="${it.id}"><i style="color: #17b654" title="Iscriviti alla gara!" class="fa fa-check fa-2x" aria-hidden="true"></i>
+                            </g:link>
+                        </td>
+                    </g:if>
+                    <g:else>
+                        <td>
+                            <strong>${it.registrations?.size()}/${it.maxRunners}</strong>
+                        </td>
+                        <td>
+                            <i style="color: red" title="Al completo, non è possibile iscriversi!" class="fa fa-ban fa-2x" aria-hidden="true"></i>
+                        </td>
+                    </g:else>
+                    <sec:ifLoggedIn>
                     <td>
-                        <g:if test="${
-                            it.registrations?.size() < it.maxRunners}">
-                            <span class="actionButton"><strong>${it.registrations?.size()}/${it.maxRunners}</strong> <small>
-                                <g:link controller="registration"
-                                        action="register"
-                                        id="${it.id}"><g:message code="registratiom.racecol.label"/>
-                                </g:link>
-                            </small>
-                            </span>
-                        </g:if>
-                        <g:else><small><g:message code="complete.racecol.label"/></small></g:else>
+                        <g:link action="edit" id="${it.id}"><i style="color: darkslategray" title="Modifica" class="fa fa-edit fa-2x" aria-hidden="true"></i></g:link>
                     </td>
+                    </sec:ifLoggedIn>
                     <td>
-                        <g:link action="show" id="${it.id}"><g:message code="info.racecol.label"/></g:link>
+                        <g:link action="show" id="${it.id}"><i style="color: darkslategray" title="Visualizza dettagli" class="fa fa-info fa-2x" aria-hidden="true"></i></g:link>
                     </td>
                 </tr>
             </g:each>

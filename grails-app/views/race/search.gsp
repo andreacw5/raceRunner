@@ -28,7 +28,7 @@
         </div>
     </g:if>
 
-    <g:if test="${raceCount < 1}">
+    <g:if test="${raceCount = 0}">
         <div style="text-align: center; margin: 10%" class="animated flipInX">
             <i class="fa fa-search fa-5x"
                aria-hidden="true"></i>
@@ -39,7 +39,7 @@
         </div>
 
     </g:if>
-    <g:if test="${raceCount > 0}">
+    <g:if test="${raceCount >= 1}">
         <h1 style="text-align: center; font-size: xx-large"><g:message code="search.title.label"/></h1>
 
         <g:form action="search" method="post">

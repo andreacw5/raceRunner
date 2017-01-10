@@ -106,3 +106,16 @@ padding: 0.5%;
 a.pull-right.arealogin{
     font-size: small !important;
 }
+
+.no-button{
+    background-color: #286286;
+    color: white;
+    border: none;
+    padding: 5px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px 1px;
+    cursor: pointer;
+}
