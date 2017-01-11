@@ -37,7 +37,10 @@
 <div id="create-sponsor" class="content scaffold-create" role="main">
     <h1><g:message code="default.create.label" args="[entityName]"/></h1>
     <g:if test="${flash.message}">
-        <div class="message" role="status">${flash.message}</div>
+        <div class="info">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            ${flash.message}
+        </div>
     </g:if>
     <g:hasErrors bean="${this.sponsor}">
         <ul class="errors" role="alert">

@@ -22,7 +22,7 @@
             <a class="pull-right arealogin" type="submit" data-toggle="modal" data-target="#exitModal" tabindex="-1" aria-hidden="true">
 
                 <i class="fa fa-unlock fa-3x"
-                   title="Utente attualmente connesso come <sec:username/>! Clicca qui per scollegarti!" style="text-align: center; color: #32b62e"
+                   title="Utente attualmente connesso come <sec:username/>!" style="text-align: center; color: #32b62e"
                    aria-hidden="true"></i>
 
             </a>

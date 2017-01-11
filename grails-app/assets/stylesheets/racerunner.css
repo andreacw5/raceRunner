@@ -24,6 +24,7 @@ table {
 th, td {
     border: lightblue;
     padding: 8px !important;
+    text-align: center;
 }
 
 .zc-ref {
@@ -40,10 +41,10 @@ th {
 }
 
 html {
-    background-color: #b7b7b7;
-    background-image: -moz-linear-gradient(center top, #aaa, #b7b7b7);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #b7b7b7), color-stop(1, #ddd));
-    background-image: linear-gradient(top, #dddddd, #b7b7b7);
+    background-color: #545454;
+    background-image: -moz-linear-gradient(center top, #3c3c3c, #c7c7c7);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3c3c3c), color-stop(1, #c7c7c7));
+    background-image: linear-gradient(top, #3c3c3c, #c7c7c7);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#aaaaaa', EndColorStr='#dddddd');
     background-repeat: no-repeat;
 }
@@ -52,6 +53,14 @@ html {
     padding: 10px;
     margin: 10px;
     background-color: #f44336;
+    color: white;
+    font-size: medium;
+}
+
+.info {
+    padding: 10px;
+    margin: 10px;
+    background-color: #286286 !important;
     color: white;
     font-size: medium;
 }
@@ -94,13 +103,15 @@ a.seetext1 {
 .arealogin{
 padding: 0.5%;
     top:0;
-    margin: 0 15px 0 1px;
-    border-right: 2px outset #c7c7c7;
-    border-bottom: 2px outset #c7c7c7;
-    border-left: 2px outset #c7c7c7;
+    margin: 0 10px 0 1px;
+    border-right: 4px outset white;
+    border-bottom: 4px outset white;
+    border-left: 4px outset white;
     width:auto!important;
+    min-width: 60px !important;
     max-width:1400px!important;
-    background: rgba(84, 84, 84, 0.48);
+    background: transparent;
+    text-align: center;
 }
 
 a.pull-right.arealogin{

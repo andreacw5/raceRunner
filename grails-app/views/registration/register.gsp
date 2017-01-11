@@ -55,7 +55,10 @@ charset=UTF-8"/>
 
     </div>
     <g:if test="${flash.message}">
-        <div class="message">${flash.message}</div>
+        <div class="info">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            ${flash.message}
+        </div>
     </g:if>
     <g:hasErrors bean="${registration}">
         <div class="errors">

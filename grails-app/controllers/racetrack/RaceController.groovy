@@ -14,6 +14,11 @@ class RaceController {
         respond Race.list(params), model: [raceCount: Race.count()]
     }
 
+    def result(Integer max) {
+        params.max = Math.min(max ?: 13, 100)
+        respond Race.list(params), model: [raceCount: Race.count()]
+    }
+
     def show(Race race) {
         respond race
     }
@@ -82,10 +87,16 @@ class RaceController {
 
     def search = {
         if (request.method == 'POST') {
-            render view: 'index', model: [raceList: Race.findAllByRaceNameLikeAndCityLike(
+
+            def pageHelper = 1
+
+            render view: 'result', model: [raceList: Race.findAllByRaceNameLikeAndCityLike(
                     '%' + params.raceName + '%', '%' + params.city + '%')]
 
+
+
         }
+
     }
 
     @Transactional

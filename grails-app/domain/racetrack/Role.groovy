@@ -13,11 +13,15 @@ class Role implements Serializable {
     String permission
 
 	static constraints = {
-		authority blank: false, unique: true
-        permission blank: false
+		authority blank: false, unique: true, inList: ['ROLE_ADMIN','ROLE_USER']
+        permission blank: false, inList: ['Amministratore','Utente']
 	}
 
 	static mapping = {
 		cache true
 	}
+
+    String toString() {
+        return "${permission}"
+    }
 }

@@ -56,7 +56,10 @@
     <div id="list-sponsor" class="content scaffold-list" role="main">
 
         <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+            <div class="info">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                ${flash.message}
+            </div>
         </g:if>
         <table id="example" class="display" width="100%" cellspacing="0">
             <tr>

@@ -4,45 +4,41 @@
     <meta name="layout" content="main"/>
     <g:set var="entityName" value="${message(code: 'race.label', default: 'Race')}"/>
     <title><g:message code="default.show.label" args="[entityName]"/></title>
+    <style>
+    body {
+        height: 90% !important;
+    }
+    </style>
 </head>
-<style>
-body {
-    height: 95% !important;
-}
-</style>
+
 <body>
 <a href="#show-race" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
                                                            default="Skip to content&hellip;"/></a>
 
 <div class="nav" role="navigation">
     <ul>
-        <li><g:link onClick="history.back()"><i class="fa fa-long-arrow-left" style="padding-right: 5px"
-                                                aria-hidden="true"></i><g:message code="backto"/></g:link></li>
+        <li title="Torna alla pagina precedente"><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
+                                                                                     aria-hidden="true"></i></g:link></li>
+        <li title="Vai alla pagina principale" ><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
+                                                                                            aria-hidden="true"></i></g:link></li>
+        <li title="Ricerca una gara" ><g:link controller="race" action="search"><i class="fa fa-search fa-2x"
+                                                                                   aria-hidden="true"></i></g:link></li>
         <sec:ifLoggedIn>
-            <li><g:link controller="race" action="create"><i class="fa fa-send" style="padding-right: 5px"
-                                                             aria-hidden="true"></i><g:message
-                    code="new.run.add.label"/></g:link></li>
-            <li><g:link controller="registration" action="create"><i class="fa fa-send-o" style="padding-right: 5px"
-                                                                     aria-hidden="true"></i><g:message
-                    code="force.run.add.label"/></g:link></li>
+                <li title="Registra una nuova gara" class="pull-right"><g:link controller="race" action="create"><i class="fa fa-plus-circle fa-2x"
+                                                                                                                    aria-hidden="true"></i></g:link></li>
+            <li class="pull-right" title="Forza l'iscrizione ad una gara"><g:link controller="registration" action="create"><i class="fa fa-hand-paper-o fa-2x"
+                                                                                                                               aria-hidden="true"></i></g:link></li>
         </sec:ifLoggedIn>
-        <li><g:link controller="race" action="search"><i class="fa fa-search" style="padding-right: 5px"
-                                                         aria-hidden="true"></i><g:message
-                code="res.home.label"/></g:link></li>
         <sec:ifNotLoggedIn>
-            <li class="pull-right"><g:link controller="login" action="auth"><i class="fa fa-lock"
-                                                                               style="padding-right: 5px"
-                                                                               aria-hidden="true"></i><g:message
-                    code="login"/></g:link></li>
+            <li class="pull-right" title="Effettua l'accesso per le funzioni aggiuntive!"><g:link controller="login" action="auth"><i class="fa fa-sign-in fa-2x"  aria-hidden="true"></i></g:link></li>
         </sec:ifNotLoggedIn>
-        <sec:ifLoggedIn>
-            <li class="pull-right"><g:link><i class="fa fa-user" style="padding-right: 5px"
-                                              aria-hidden="true"></i><g:message
-                    code="sec.name.label"/> <sec:username/></g:link></li>
-        </sec:ifLoggedIn></ul>
+    </ul>
 </div>
 <g:if test="${flash.message}">
-    <div class="message" role="status">${flash.message}</div>
+    <div class="info">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        ${flash.message}
+    </div>
 </g:if>
 <div>
     <h1 style="font-size: xx-large; text-align: center"><g:link

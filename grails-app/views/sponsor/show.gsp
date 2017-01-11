@@ -37,7 +37,10 @@
         <div id="show-sponsor" class="content scaffold-show" role="main">
             <h1><g:message code="default.show.label" args="[entityName]" /></h1>
             <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
+                <div class="info">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    ${flash.message}
+                </div>
             </g:if>
             <f:display bean="sponsor" />
             <g:form resource="${this.sponsor}" method="DELETE">
