@@ -2,16 +2,15 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <g:set var="entityName" value="${message(code: 'user.label', default: 'User')}"/>
-    <title><g:message code="default.list.label" args="[entityName]"/></title>
+    <title><g:message code="page.user.label"/></title>
 </head>
 
 <body>
-<a href="#list-user" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                           default="Skip to content&hellip;"/></a>
 
 <div class="nav" role="navigation">
     <ul>
+        <li id="nav-1" title="Torna alla pagina precedente" ><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
+                                                                                                 aria-hidden="true"></i></g:link></li>
         <li title="Vai alla pagina principale"><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
                                                                                            aria-hidden="true"></i></g:link></li>
         <li title="Vai alla pagina degli Sponsor"><g:link controller="sponsor" action="index"><i class="fa fa-shield fa-2x"
@@ -25,10 +24,8 @@
             <li title="Vai alla pagina delle Registrazioni"><g:link controller="registration" action="index"><i class="fa fa-reorder fa-2x"
                                                                                                                 aria-hidden="true"></i></g:link></li>
 
-            <g:if test="${raceCount > 0}">
-                <li title="Registra una nuova gara" class="pull-right"><g:link controller="race" action="create"><i class="fa fa-plus-circle fa-2x"
+            <li title="Registra una nuovo utente" class="pull-right"><g:link controller="user" action="create"><i class="fa fa-plus-circle fa-2x"
                                                                                                                     aria-hidden="true"></i></g:link></li>
-            </g:if>
             <li class="pull-right" title="Forza l'iscrizione ad una gara"><g:link controller="registration" action="create"><i class="fa fa-hand-paper-o fa-2x"
                                                                                                                                aria-hidden="true"></i></g:link></li>
         </sec:ifLoggedIn>

@@ -10,12 +10,12 @@ class RaceController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 13, 100)
+        params.max = Math.min(max ?: 14, 100)
         respond Race.list(params), model: [raceCount: Race.count()]
     }
 
     def result(Integer max) {
-        params.max = Math.min(max ?: 13, 100)
+        params.max = Math.min(max ?: 14, 100)
         respond Race.list(params), model: [raceCount: Race.count()]
     }
 

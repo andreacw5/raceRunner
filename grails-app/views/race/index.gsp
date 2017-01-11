@@ -66,18 +66,21 @@
         </g:if>
         <table id="example" class="display" width="100%" cellspacing="0">
             <tr>
-                <th><g:message code="name.racecol.label"/></th>
-                <th><g:message code="type.racecol.label"/></th>
-                <th><g:message code="date.racecol.label"/></th>
-                <th><g:message code="money.racecol.label"/></th>
-                <th><g:message code="dist.racecol.label"/></th>
-                <th><g:message code="city.racecol.label"/></th>
-                <th><g:message code="runner.racecol.label"/></th>
-                <th></th>
+                <g:sortableColumn style="min-width: 100px !important;" property="raceName" title="${message(code: 'name.racecol.label', default: 'name')}" />
+                <g:sortableColumn property="raceType" title="${message(code: 'type.racecol.label', default: 'type')}" />
+                <g:sortableColumn property="startDateName" defaultOrder="desc" title="${message(code: 'date.racecol.label', default: 'name')}" />
+                <g:sortableColumn property="cost" title="${message(code: 'money.racecol.label', default: 'name')}" />
+                <g:sortableColumn property="distance" title="${message(code: 'dist.racecol.label', default: 'name')}" />
+                <g:sortableColumn property="city" title="${message(code: 'city.racecol.label', default: 'name')}" />
+                <g:sortableColumn property="maxRunners" title="${message(code: 'runner.racecol.label', default: 'name')}" />
+                <th><i title="Disponibilità iscrizione" class="fa fa-calendar-check-o fa-2x"
+                       aria-hidden="true"></i></th>
     <sec:ifLoggedIn>
-                <th></th>
+                <th><i title="Modifica" class="fa fa-edit fa-2x"
+                       aria-hidden="true"></i></th>
     </sec:ifLoggedIn>
-                <th></th>
+                <th><i title="Informazioni" class="fa fa-info fa-2x"
+                       aria-hidden="true"></i></th>
             </tr>
             <g:each in="${raceList}">
                 <tr>

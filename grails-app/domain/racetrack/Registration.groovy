@@ -19,7 +19,7 @@ class Registration {
     static constraints = {
         name nullable: true
         surname nullable: true
-        gender nullable: true, inList: ['M','F']
+        gender nullable: true, inList: ['Uomo','Donna']
         birthDate nullable: true
         postalAddress nullable: true
         emailAddress nullable: true, email: true

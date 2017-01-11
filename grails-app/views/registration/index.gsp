@@ -38,12 +38,15 @@
 </div>
 
 <div id="list-registration" class="content scaffold-list" role="main">
-    <h1><g:message code="default.list.label" args="[entityName]"/></h1>
     <f:table collection="${registrationList}"/>
 
-    <div class="pagination">
-        <g:paginate total="${registrationCount ?: 0}"/>
-    </div>
+
+
+    <g:if test="${raceCount > 13}">
+        <div class="buttons footer pull-right">
+            <a class="formbutton"><g:paginate total="${registrationCount ?: 0}"/></a>
+        </div>
+    </g:if>
 </div>
 </body>
 </html>

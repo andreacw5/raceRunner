@@ -6,7 +6,9 @@
     <title><g:message code="default.show.label" args="[entityName]"/></title>
     <style>
     body {
-        height: 90% !important;
+        height: auto !important;
+        min-height: 80% !important;
+        max-height: 95% !important;
     }
     </style>
 </head>
@@ -71,7 +73,7 @@
         <div style="margin-inside: 3px; padding-top: 5px;">
             <b>L'organizzazione:</b><br>
             <i class="fa fa-male" aria-hidden="true"></i> Organizzatore: ${race.organizator}<br>
-            <i class="fa fa-adn" aria-hidden="true"></i>  Sponsor della gara: ${race.sponsor} <br>
+            <i class="fa fa-shield" aria-hidden="true"></i>  Sponsor della gara: ${race.sponsor} <br>
         </div>
 
         <i class="fa fa-eur" aria-hidden="true"></i> Costo di iscrizione: <g:formatNumber number="${race.cost}"
@@ -87,6 +89,10 @@
 
 </div>
 <sec:ifLoggedIn>
+<div style="font-size: small; margin-left: 20px; padding-top: 45px">
+    <h1 style="font-size: large; text-align: center">I partecipanti iscritti</h1>
+    <f:widget bean="race" property="registrations"/><br>
+</div>
     <g:form resource="${this.race}" method="DELETE">
         <fieldset class="buttons footer pull-right">
             <g:link class="edit" action="edit" resource="${this.race}"><g:message code="default.button.edit.label"
@@ -97,9 +103,5 @@
         </fieldset>
     </g:form>
 </sec:ifLoggedIn>
-<div style="font-size: small; margin-left: 20px; padding-top: 45px">
-    <h1 style="font-size: large; text-align: center">I partecipanti iscritti</h1>
-    <f:widget bean="race" property="registrations"/><br>
-</div>
 </body>
 </html>

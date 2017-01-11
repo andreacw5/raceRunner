@@ -9,6 +9,7 @@ class Sponsor {
         name nullable: true
         desc nullable: true
         type inList: ['Abbigliamento','Attrezzature Sportive','Altro'], nullable: true
+
     }
 
     String toString() {

@@ -27,6 +27,10 @@ th, td {
     text-align: center;
 }
 
+td{
+    border-right: solid 1px black;
+}
+
 .zc-ref {
     display: none;
 }
@@ -129,4 +133,56 @@ a.pull-right.arealogin{
     font-size: 16px;
     margin: 1px 1px;
     cursor: pointer;
+}
+
+select.sec {
+    width: auto;
+    padding: 7px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+input[type=text].sec {
+    width: 49%;
+    padding: 7px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=date].sec {
+    width: 49%;
+    padding: 7px 15px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit].sec {
+    width: 49%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 7px 15px;
+    margin: 4px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div.sec {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
 }

@@ -9,7 +9,9 @@
 <body>
 <style>
 body {
-    height: 95% !important;
+    height: auto !important;
+    min-height: 80% !important;
+    max-height: 95% !important;
 }
 </style>
 <a href="#create-race" class="skip" tabindex="-1"><g:message code="default.link.skip.label"

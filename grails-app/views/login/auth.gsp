@@ -13,7 +13,7 @@
 </head>
 
 <body class="tablet">
-<div class="nav animated bounceInRight" role="navigation">
+<div class="nav" role="navigation">
     <ul>
         <li id="nav-1" title="Torna alla pagina precedente" ><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
                                                                                                              aria-hidden="true"></i></g:link></li>
