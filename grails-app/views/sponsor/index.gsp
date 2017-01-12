@@ -34,11 +34,19 @@
                                                                                   aria-hidden="true"></i></g:link></li>
     </ul>
 </div>
+
+<g:if test="${flash.message}">
+    <div class="info">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        ${flash.message}
+    </div>
+
+</g:if>
+
 <g:if test="${sponsorCount < 1}">
     <div style="text-align: center; margin: 10%" class="animated flipInX">
         <sec:ifLoggedIn>
             <i class="fa grails-icon">
-                <asset:image src="runner-icon1.png"/>
             </i>
 
             <h2><g:message code="sponsor.screen.label"/><br></h2>
@@ -60,19 +68,11 @@
 </g:if>
 <g:if test="${sponsorCount > 0}">
     <div id="list-sponsor" class="content scaffold-list" role="main">
-
-        <g:if test="${flash.message}">
-            <div class="info">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                ${flash.message}
-            </div>
-
-        </g:if>
         <table id="example" class="display" width="100%" cellspacing="0">
             <tr>
                 <g:sortableColumn style="min-width: 80px !important;" property="name" title="${message(code: 'name.sponsor.label', default: 'name')}" />
                 <g:sortableColumn property="type" title="${message(code: 'type.sponsor.label', sponsor: 'type')}" />
-                <g:sortableColumn property="desc" title="${message(code: 'decs.sponsor.label', default: 'name')}" />
+                <g:sortableColumn style="min-width: 80px !important;" property="desc" title="${message(code: 'decs.sponsor.label', default: 'name')}" />
                 <sec:ifLoggedIn>
                     <th><i title="Modifica" class="fa fa-edit fa-2x"
                            aria-hidden="true"></i></th>
@@ -101,7 +101,6 @@
                 </div>
             </g:if>
     </div>
-
 </g:if>
 </body>
 </html>

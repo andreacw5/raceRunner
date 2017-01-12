@@ -45,10 +45,6 @@ th {
 }
 
 html {
-    background-color: #545454;
-    background-image: -moz-linear-gradient(center top, #3c3c3c, #c7c7c7);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3c3c3c), color-stop(1, #c7c7c7));
-    background-image: linear-gradient(top, #3c3c3c, #c7c7c7);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#aaaaaa', EndColorStr='#dddddd');
     background-repeat: no-repeat;
 }
@@ -148,8 +144,8 @@ select.sec {
 
 input[type=text].sec {
     width: 49%;
-    padding: 7px 15px;
-    margin: 4px 0;
+    padding: 5px 15px;
+    margin: 1px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -174,5 +170,21 @@ input[type=submit]:hover {
 div.sec {
     border-radius: 5px;
     background-color: #f2f2f2;
-    padding: 20px;
+    padding: 15px;
+}
+
+.boxed-area{
+    background: #ffffff;
+    color: #333333;
+    overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+    -moz-box-shadow: 0 0 0.3em #286286;
+    -webkit-box-shadow: 0 0 0.3em #286286;
+    box-shadow: 0 0 0.3em #286286;
+    width: 50%;
+    margin: 0 auto;
+    height: 80%;
+    /* change the box model to exclude the padding from the calculation of 100% height (IE8+) */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }

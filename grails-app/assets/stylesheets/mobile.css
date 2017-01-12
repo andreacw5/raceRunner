@@ -1,6 +1,6 @@
 /* Styles for mobile devices */
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 670px) {
     .nav {
         padding: 0.5em;
     }
@@ -38,7 +38,6 @@
         width: 100%;
            -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
-            -ms-box-sizing: border-box;
                 box-sizing: border-box;
     }
 
@@ -78,5 +77,10 @@
 
     .error ul {
         margin-left: 0;
+    }
+
+    .boxed-area{
+        width: auto !important;
+        height: auto !important;
     }
 }

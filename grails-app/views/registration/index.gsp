@@ -7,11 +7,12 @@
 </head>
 
 <body>
-<a href="#list-registration" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                                   default="Skip to content&hellip;"/></a>
 
 <div class="nav" role="navigation">
     <ul>
+        <li title="Torna alla pagina precedente" ><g:link onClick="history.back()"><i class="fa fa-mail-reply fa-2x"
+                                                                                      aria-hidden="true"></i></g:link></li>
+
         <li title="Vai alla pagina principale"><g:link controller="race" action="index"><i class="fa fa-home fa-2x"
                                                                                            aria-hidden="true"></i></g:link></li>
         <li title="Vai alla pagina degli Sponsor"><g:link controller="sponsor" action="index"><i class="fa fa-shield fa-2x"
@@ -25,18 +26,24 @@
             <li title="Vai alla pagina delle Registrazioni"><g:link controller="registration" action="index"><i class="fa fa-reorder fa-2x"
                                                                                                                 aria-hidden="true"></i></g:link></li>
 
-            <g:if test="${raceCount > 0}">
-                <li title="Registra una nuova gara" class="pull-right"><g:link controller="race" action="create"><i class="fa fa-plus-circle fa-2x"
+            <li title="Registra una nuova gara" class="pull-right"><g:link controller="registration" action="create"><i class="fa fa-plus-circle fa-2x"
                                                                                                                     aria-hidden="true"></i></g:link></li>
-            </g:if>
-            <li class="pull-right" title="Forza l'iscrizione ad una gara"><g:link controller="registration" action="create"><i class="fa fa-hand-paper-o fa-2x"
-                                                                                                                               aria-hidden="true"></i></g:link></li>
         </sec:ifLoggedIn>
         <li title="Ricerca una gara"><g:link controller="race" action="search"><i class="fa fa-search fa-2x"
                                                                                   aria-hidden="true"></i></g:link></li>
     </ul>
 </div>
 
+<g:if test="${registrationCount < 1}">
+    <div style="text-align: center; margin: 10%" class="animated flipInX">
+            <i class="fa grails-icon">
+                <i class="fa fa-ticket fa-5x"
+                   aria-hidden="true"></i>
+            </i>
+            <h2><g:message code="reg.screen.label"/><br></h2>
+    </div>
+</g:if>
+<g:if test="${registrationCount > 0}">
 <div id="list-registration" class="content scaffold-list" role="main">
     <table id="example" class="display" width="100%" cellspacing="0">
         <tr>
@@ -77,5 +84,6 @@
         </div>
     </g:if>
 </div>
+</g:if>
 </body>
 </html>

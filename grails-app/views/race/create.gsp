@@ -8,7 +8,7 @@
 
 <body>
 <style>
-body {
+.boxed-area {
     height: auto !important;
     min-height: 80% !important;
     max-height: 95% !important;
@@ -57,40 +57,40 @@ body {
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.name.label"/>
-                    <f:widget bean="race" property="raceName"/>
+                    <f:widget class="sec" bean="race" property="raceName"/>
                 </div>
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.type.label"/>
-                    <f:widget bean="race" property="raceType"/>
+                    <f:widget class="sec" bean="race" property="raceType"/>
                 </div>
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.cost.label"/>
-                    <f:widget bean="race" property="cost"/> €
+                    <f:widget class="sec" bean="race" property="cost"/> €
                 </div>
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.distance.label"/>
-                    <f:widget bean="race" property="distance"/>
-                    <f:widget bean="race" property="distanceType" value="Km"/>
+                    <f:widget class="sec" bean="race" property="distance"/>
+                    <f:widget class="sec" bean="race" property="distanceType" value="Km"/>
                 </div>
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.maxRunner.label"/>
-                    <f:widget bean="race" property="maxRunners"/>
+                    <f:widget class="sec" bean="race" property="maxRunners"/>
                 </div>
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.date.label"/>
-                    <f:widget bean="race"
+                    <f:widget class="sec" bean="race"
                               property="startDateName"
                               value='${new Date()}'/></a>
                 </div>
 
                 <div class="seetab"><a class="seetext">
                     <g:message code="race.times.label"/>
-                    <f:widget bean="race"
+                    <f:widget class="sec" bean="race"
                               property="times"
                               value="20:00"/></a>
                 </div>

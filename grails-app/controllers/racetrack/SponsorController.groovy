@@ -39,7 +39,7 @@ class SponsorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'sponsor.label', default: 'Sponsor'), sponsor.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'sponsor.label', default: sponsor.name), sponsor.id])
                 redirect sponsor
             }
             '*' { respond sponsor, [status: CREATED] }
@@ -68,7 +68,7 @@ class SponsorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'sponsor.label', default: 'Sponsor'), sponsor.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'sponsor.label', default: sponsor.name), sponsor.id])
                 redirect sponsor
             }
             '*'{ respond sponsor, [status: OK] }
@@ -88,7 +88,7 @@ class SponsorController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'sponsor.label', default: 'Sponsor'), sponsor.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'sponsor.label', default: sponsor.name), sponsor.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -98,7 +98,7 @@ class SponsorController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'sponsor.label', default: 'Sponsor'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'sponsor.label', default: sponsor.name), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

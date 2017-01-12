@@ -56,7 +56,7 @@
     </g:hasErrors>
     <g:form action="save">
         <fieldset class="form">
-            <div style="overflow:auto; height:520px; width: auto">
+            <div style="overflow:auto; height:520px;padding-right: 15%; width: auto">
                 <h4>Informazioni personali</h4>
                 <f:widget class="sec" bean="registration" property="name" placeholder="Nome"/>
                 <f:widget class="sec" bean="registration" property="surname" placeholder="Cognome"/><br>

@@ -7,9 +7,9 @@
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 100px;
-    padding: 45px;
+    max-width: 66%;
+    margin: 0 auto 50px;
+    padding: 30px;
     text-align: center;
 
 }
@@ -17,12 +17,12 @@
     font-family: "Roboto", sans-serif;
     outline: 0;
     background: #f2f2f2;
-    width: 100%;
+    width: 90%;
     border: 0;
-    margin: 0 0 15px;
-    padding: 15px;
+    margin: 0 0 12px;
+    padding: 12px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 12px;
 }
 .form button {
     font-family: "Roboto", sans-serif;

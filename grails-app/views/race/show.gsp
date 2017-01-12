@@ -7,15 +7,13 @@
     <style>
     body {
         height: auto !important;
-        min-height: 80% !important;
-        max-height: 95% !important;
+        min-height: 89% !important;
+        max-height: 98% !important;
     }
     </style>
 </head>
 
 <body>
-<a href="#show-race" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                           default="Skip to content&hellip;"/></a>
 
 <div class="nav" role="navigation">
     <ul>
