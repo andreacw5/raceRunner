@@ -38,11 +38,40 @@
 </div>
 
 <div id="list-registration" class="content scaffold-list" role="main">
-    <f:table collection="${registrationList}"/>
+    <table id="example" class="display" width="100%" cellspacing="0">
+        <tr>
+            <g:sortableColumn property="race" title="${message(code: 'race.registration.label', default: 'race')}" />
+            <g:sortableColumn property="surname" title="${message(code: 'surname.registration.label', default: 'surname')}" />
+            <g:sortableColumn property="name" title="${message(code: 'name.registration.label', default: 'name')}" />
+            <g:sortableColumn property="comRes" title="${message(code: 'comRes.registration.label', default: 'password')}" />
+            <g:sortableColumn style="width: 15% !important;" property="birthDate" title="${message(code: 'birthDate.registration.label', default: 'password')}" />
+            <g:sortableColumn property="mobilePhone" title="${message(code: 'mobilePhone.registration.label', default: 'password')}" />
+            <th style="width: 5% !important;"><i title="Modifica" class="fa fa-edit fa-2x"
+                                                 aria-hidden="true"></i></th>
+            <th style="width: 5% !important;"><i title="Informazioni" class="fa fa-info fa-2x"
+                                                 aria-hidden="true"></i></th>
+        </tr>
+        <g:each in="${registrationList}">
+            <tr>
+                <td>${it.race}</td>
+                <td>${it.surname}</td>
+                <td>${it.name}</td>
+                <td>${it.comRes}</td>
+                <td><g:formatDate format="dd/MM/yyyy" date="${it.birthDate}"/></td>
+                <td>${it.mobilePhone}</td>
+                <td>
+                    <g:link action="edit" id="${it.id}"><i style="color: darkslategray" title="Modifica" class="fa fa-edit fa-2x" aria-hidden="true"></i></g:link>
+                </td>
+                <td>
+                    <g:link action="show" id="${it.id}"><i style="color: darkslategray" title="Visualizza dettagli" class="fa fa-info fa-2x" aria-hidden="true"></i></g:link>
+                </td>
+            </tr>
+        </g:each>
+    </table>
 
 
 
-    <g:if test="${raceCount > 13}">
+    <g:if test="${registrationCount > 13}">
         <div class="buttons footer pull-right">
             <a class="formbutton"><g:paginate total="${registrationCount ?: 0}"/></a>
         </div>

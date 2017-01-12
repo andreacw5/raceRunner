@@ -88,12 +88,8 @@ class RaceController {
     def search = {
         if (request.method == 'POST') {
 
-            def pageHelper = 1
-
             render view: 'result', model: [raceList: Race.findAllByRaceNameLikeAndCityLike(
                     '%' + params.raceName + '%', '%' + params.city + '%')]
-
-
 
         }
 

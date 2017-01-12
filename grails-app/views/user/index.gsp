@@ -41,11 +41,13 @@
         </g:if>
         <table id="example" class="display" width="100%" cellspacing="0">
             <tr>
-                <th><g:message code="username.user.label"/></th>
-                <th><g:message code="role.user.label"/></th>
-                <th><g:message code="password.user.label"/></th>
-                <th></th>
-                <th></th>
+                <g:sortableColumn property="username" title="${message(code: 'username.user.label', default: 'username')}" />
+                <g:sortableColumn property="role" title="${message(code: 'role.user.label', default: 'role')}" />
+                <g:sortableColumn property="password" title="${message(code: 'password.user.label', default: 'password')}" />
+                <th style="width: 5% !important;"><i title="Modifica" class="fa fa-edit fa-2x"
+                                                     aria-hidden="true"></i></th>
+                <th style="width: 5% !important;"><i title="Informazioni" class="fa fa-info fa-2x"
+                                                     aria-hidden="true"></i></th>
             </tr>
             <g:each in="${userList}">
                 <tr>

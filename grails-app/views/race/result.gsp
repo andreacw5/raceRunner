@@ -3,7 +3,7 @@
 <head>
     <meta name="layout" content="main"/>
     <g:set var="entityName" value="${message(code: 'race.label', default: 'race')}"/>
-    <title><g:message code="default.list.label" args="[entityName]"/></title>
+    <title><g:message code="result.list.label"/></title>
 </head>
 
 <body>

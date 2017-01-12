@@ -42,6 +42,6 @@ class Race {
     // Call domain into String
 
     String toString() {
-        return "${raceName}, ${maxRunners}"
+        return "${raceName}"
     }
 }

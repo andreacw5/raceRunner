@@ -73,13 +73,13 @@
                 <g:sortableColumn property="distance" title="${message(code: 'dist.racecol.label', default: 'name')}" />
                 <g:sortableColumn property="city" title="${message(code: 'city.racecol.label', default: 'name')}" />
                 <g:sortableColumn property="maxRunners" title="${message(code: 'runner.racecol.label', default: 'name')}" />
-                <th><i title="Disponibilità iscrizione" class="fa fa-calendar-check-o fa-2x"
+                <th style="width: 5% !important;"><i title="Disponibilità iscrizione" class="fa fa-calendar-o fa-2x"
                        aria-hidden="true"></i></th>
     <sec:ifLoggedIn>
-                <th><i title="Modifica" class="fa fa-edit fa-2x"
+                <th style="width: 5% !important;"><i title="Modifica" class="fa fa-edit fa-2x"
                        aria-hidden="true"></i></th>
     </sec:ifLoggedIn>
-                <th><i title="Informazioni" class="fa fa-info fa-2x"
+                <th style="width: 5% !important;"><i title="Informazioni" class="fa fa-info fa-2x"
                        aria-hidden="true"></i></th>
             </tr>
             <g:each in="${raceList}">
@@ -92,7 +92,7 @@
                     <td>${it.city}</td>
                     <g:if test="${ it.registrations?.size() < it.maxRunners}">
                         <td>
-                                <strong>${it.registrations?.size()}/${it.maxRunners}</strong>
+                                <strong style="font-size: large">${it.registrations?.size()}/${it.maxRunners}</strong>
                         </td>
                         <td>
                             <g:link controller="registration" action="register" id="${it.id}"><i style="color: #17b654" title="Iscriviti alla gara!" class="fa fa-pencil fa-2x" aria-hidden="true"></i>
