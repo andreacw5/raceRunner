@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <asset:stylesheet src="application.css"/>
-    <asset:stylesheet src="/../font-awesome-4.7.0/css/font-awesome.css"/>
+    <asset:stylesheet src="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
     <g:layoutHead/>
 </head>
